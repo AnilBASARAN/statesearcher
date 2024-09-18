@@ -34,6 +34,7 @@ const App = () => {
       onSubmit={(e)=>{
         e.preventDefault();
         fetchState();
+        setText("");
       }}
       >
       <label htmlFor="state-input">State</label>
