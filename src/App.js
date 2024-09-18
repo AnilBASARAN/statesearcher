@@ -14,13 +14,14 @@ const App = () => {
 
   const fetchState = async ()=>{
   const response = await fetch(BASE_URL + text);
-  const data = await response.json();
-
-    if(response.status === 200){
-      setState(data);
+  
+  if(response.status === 200){
+      const stateData = await response.json();
+      setState(stateData);
       setError(null);
     }else{
-      setError(data);
+      const errorData = await response.json();
+      setError(errorData);
       setState(null);
     }
   };
